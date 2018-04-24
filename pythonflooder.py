@@ -86,9 +86,6 @@ def main(): # main function ( most important )
 		
 	print("beginning the flood!")  # ascii code (index)
 	print("[*] start flooding") # info
-	print("[*] type ALT + F4 to stop flooder") # info
-		   
-	time.sleep(3) 
-	_threads_()
+	print("[*] type ALT + F4 to stop flooder") # info		  
 
 main()
