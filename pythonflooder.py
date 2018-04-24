@@ -1,18 +1,14 @@
 #! /usr/bin/env python
 """
-
 requirements:
-
 python 
 pequests module
 
-correct usage:
-
+usage:
 ./pythonflooder.py --host <<host>>
 ./pythonflooder.py --host http://www.example.com
 
 author: frostyworks
-
 """
 
 import time
