@@ -79,10 +79,8 @@ def _threads_(): # threading function
 	 z1.start()
 	 x1.start()
 
-	 
 	
 def main(): # main function ( most important )
-	
 		
 	print("beginning the flood!")  # ascii code (index)
 	print("[*] start flooding") # info
