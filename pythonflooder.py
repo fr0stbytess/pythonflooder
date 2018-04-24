@@ -80,10 +80,11 @@ def _threads_(): # threading function
 	 x1.start()
 
 	
-def main(): # main function ( most important )
+def main(): # main function
 		
 	print("beginning the flood!")  # ascii code (index)
-	print("[*] start flooding") # info
-	print("[*] type ALT + F4 to stop flooder") # info		  
+	print("========================")
+	print("[*] start flooding.") # info
+	print("[*] type ALT + F4 to stop the flooder.") # info		  
 
 main()
