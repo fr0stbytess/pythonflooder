@@ -23,8 +23,6 @@ except ImportError: # if requests module isn't installed
 		sys.exit(" sudo apt-get install python-requests ") # exit
 	else:
 		sys.exit() # exit
-		
-
            
 def stresser(): # core
 	
@@ -49,9 +47,7 @@ def stresser(): # core
 			print("[-] host doesn't exist! ")
 			sys.exit() # exit
 
-
 def _threads_(): # threading function
-	 
 	
 	 c= threading.Thread(target=stresser) # generating threads
 	 d= threading.Thread(target=stresser)
@@ -78,7 +74,6 @@ def _threads_(): # threading function
 	 e1.start()
 	 z1.start()
 	 x1.start()
-
 	
 def main(): # main function
 		
