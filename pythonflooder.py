@@ -2,7 +2,7 @@
 """
 requirements:
 python 
-pequests module
+requests module
 
 usage:
 ./pythonflooder.py --host <<host>>
