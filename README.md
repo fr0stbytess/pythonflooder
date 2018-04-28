@@ -1,5 +1,5 @@
 # pythonflooder
-Unpowerful, weak requests-based Python flooder.
+Unpowerful and weak requests-based Python flooder.
 
 # Usage:
 "python pythonflooder.py --host TARGET"
