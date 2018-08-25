@@ -80,6 +80,6 @@ def main(): # main function
 	print("beginning the flood!")  # ascii code (index)
 	print("========================")
 	print("[*] start flooding.") # info
-	print("[*] type ALT + F4 to stop the flooder.") # info		  
+	print("[*] press ALT + F4 to stop the flooder.") # info		  
 
 main()
