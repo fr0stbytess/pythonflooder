@@ -43,31 +43,9 @@ def stresser():
 
 
 def _threads_():
-    c = threading.Thread(target=stresser)
-    d = threading.Thread(target=stresser)
-    a = threading.Thread(target=stresser)
-    e = threading.Thread(target=stresser)
-    z = threading.Thread(target=stresser)
-    x = threading.Thread(target=stresser)
-    c1 = threading.Thread(target=stresser)
-    d1 = threading.Thread(target=stresser)
-    a1 = threading.Thread(target=stresser)
-    e1 = threading.Thread(target=stresser)
-    z1 = threading.Thread(target=stresser)
-    x1 = threading.Thread(target=stresser)
-
-    c.start()
-    d.start()
-    a.start()
-    e.start()
-    z.start()
-    x.start()
-    c1.start()
-    d1.start()
-    a1.start()
-    e1.start()
-    z1.start()
-    x1.start()
+    for i in range(12):
+    	a = threading.Thread(target=stresser)
+    	a.start()
 
 
 def main():
